@@ -57,17 +57,17 @@ export const WaitlistButton = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-2">
         <Button
           onClick={() => setIsOpen(true)}
           size="lg"
-          className="bg-primary text-primary-foreground hover:bg-primary/95 font-medium text-base px-8 h-12 rounded-full transition-all hover:scale-[1.02]"
+          className="bg-slate-900 text-white hover:bg-slate-800 font-medium text-base px-8 h-12 rounded-full transition-all hover:scale-[1.02] border border-blue-500/50"
         >
           Join Waitlist
         </Button>
         {count > 0 && (
-          <div className="text-muted-foreground text-sm">
-            <span className="text-foreground font-semibold">{count}</span> joined so far
+          <div className="text-gray-400 text-sm">
+            <span className="text-white font-semibold">{count}</span> joined so far
           </div>
         )}
       </div>

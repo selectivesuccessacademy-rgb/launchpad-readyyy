@@ -1,8 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes lightning {
+  0%, 100% { opacity: 0; }
+  10%, 15% { opacity: 0.8; }
+  20%, 100% { opacity: 0; }
+}
+
+@keyframes lightning-delayed {
+  0%, 20% { opacity: 0; }
+  30%, 35% { opacity: 0.6; }
+  40%, 100% { opacity: 0; }
+}
+
+@keyframes mist-rise {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  80% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-100px) scaleY(1.5);
+    opacity: 0;
+  }
+}
 
 /* Modern black & white design system with Space Grotesk */
 
@@ -38,7 +67,7 @@
     --ring: 217 91% 60%;
 
     --radius: 0.5rem;
-    
+
     /* Glow colors for effects */
     --glow-blue: 217 91% 60%;
     --glow-cyan: 180 100% 50%;
@@ -111,7 +140,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
+    font-weight: 300;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -120,9 +150,21 @@
     text-shadow: 0 0 20px hsl(var(--glow-blue) / 0.5),
                  0 0 40px hsl(var(--glow-blue) / 0.3);
   }
-  
+
   .glow-effect {
     filter: blur(100px);
     opacity: 0.3;
+  }
+
+  .lightning-bolt {
+    animation: lightning 3s ease-in-out infinite;
+  }
+
+  .lightning-bolt-delayed {
+    animation: lightning-delayed 3s ease-in-out infinite;
+  }
+
+  .mist-effect {
+    animation: mist-rise 4s ease-out infinite;
   }
 }
